@@ -1,0 +1,36 @@
+service: express-serverless
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+
+functions:
+  app:
+    handler: app.handler
+    events:
+      - http:
+          path: /funcionario
+          method: get
+      - http:
+          path: /funcionario/{id}
+          method: get
+      - http:
+          path: /funcionario
+          method: put
+      - http:
+          path: /funcionario/{id}
+          method: delete
+
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    httpPort: 3000
+
+package:
+  exclude:
+    - node_modules/**
+    - .serverless/**
+    - .git/**
