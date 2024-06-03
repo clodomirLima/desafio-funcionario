@@ -1,10 +1,12 @@
 {
   "name": "desafio-funcionario",
   "version": "1.0.0",
-  "description": "Lambda que para gerenciar base de funcionarios",
-  "main": "index.js",
+  "description": "Lambda para gerenciar base de funcionários",
+  "main": "app.js",
   "scripts": {
     "start": "nodemon ./server.js",
+    "start:serverless": "sls offline",
+    "deploy": "sls deploy",
     "test": "jest --logHeapUsage --runInBand --detectOpenHandles --forceExit"
   },
   "repository": {
@@ -26,7 +28,9 @@
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.15",
     "sequelize": "^6.21.3",
-    "serverless-http": "^3.2.0"
+    "serverless-http": "^3.2.0",
+    "serverless": "^3.0.0",
+    "serverless-offline": "^8.0.0"
   },
   "devDependencies": {},
   "keywords": []
