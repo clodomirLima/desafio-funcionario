@@ -2,11 +2,16 @@ const Funcionario = require('../models/funcionarioTb')
 const Database = require('../database/conectDB')
 
 class FuncionarioService {
+    
     async findAllFuncionario() {
         const db = new Database();
         db.init()
         try {
-            const result = await Funcionario.findAll();
+            const result = await Funcionario.findAll(
+                {
+                    attributes: ['id', 'idade']
+                }
+            );
             return result;
         } catch (error) {
             throw new Error(error.message);

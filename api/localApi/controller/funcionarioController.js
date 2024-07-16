@@ -1,5 +1,6 @@
 const FuncionarioService = require("./../service/funcionarioService");
 class FuncionarioController {
+
     async findAllFuncionario() {
         const funcionarioService = new FuncionarioService();
 
