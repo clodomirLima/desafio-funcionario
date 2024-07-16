@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const ApiController = require("./controller/apiController");
+const ApiController = require("./controller/funcionarioController");
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
